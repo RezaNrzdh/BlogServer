@@ -29,7 +29,7 @@ const ArticleSchema = new mongoose.Schema({
         default: new Date(Date.now())
     }
 },{ 
-    collation: 'articles'
+    collection: 'articles'
 });
 
 const Articles = mongoose.model('Articles', ArticleSchema);

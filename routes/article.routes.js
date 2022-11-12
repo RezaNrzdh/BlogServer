@@ -3,6 +3,7 @@ const router = express.Router();
 const { 
     getArticle, 
     getAllArticles,
+    getlimitArticle,
     createArticle } = require('../controllers/article.controller');
 
 router
@@ -14,6 +15,9 @@ router
 .route('/:id')
 .get(getArticle);
 
+router
+.route('/limit/:num')
+.get(getlimitArticle);
 
 
 module.exports = router;
