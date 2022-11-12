@@ -5,8 +5,32 @@ const ArticleSchema = new mongoose.Schema({
         type: String,
         required: true,   
     },
-
-}, { collation: 'articles' });
+    img: {
+        type: Array,
+        required: true
+    },
+    desc: {
+        type: String,
+        required: true
+    },
+    duration: {
+        type: Number
+    },
+    author: {
+        type: String,
+        required: true
+    },
+    tags: {
+        type: Array
+    },
+    created: {
+        type: Number,
+        required: true,
+        default: new Date(Date.now())
+    }
+},{ 
+    collation: 'articles'
+});
 
 const Articles = mongoose.model('Articles', ArticleSchema);
 

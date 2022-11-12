@@ -1,9 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const { getArticle, getAllArticles } = require('../controllers/article.controller');
+const { 
+    getArticle, 
+    getAllArticles,
+    createArticle } = require('../controllers/article.controller');
 
-router.route('/').get(getAllArticles);
-router.route('/:id').get(getArticle);
+router
+.route('/')
+.get(getAllArticles)
+.post(createArticle);
+
+router
+.route('/:id')
+.get(getArticle);
 
 
 
