@@ -14,9 +14,9 @@ const app = express();
 
 //app config
 app.use(express.json());
-app.use(cors(CORS_OPTIONS));
+app.use(cors());
 
 //routes
-app.use('/article', articleRoutes);
+app.use('/api/article', articleRoutes);
 
 module.exports = app;

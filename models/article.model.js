@@ -23,6 +23,14 @@ const ArticleSchema = new mongoose.Schema({
     tags: {
         type: Array
     },
+    editorpicked: {
+        type: Boolean,
+        default: false
+    },
+    visit: {
+        type: Number,
+        default: 0
+    },
     created: {
         type: Number,
         required: true,
