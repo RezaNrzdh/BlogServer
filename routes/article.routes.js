@@ -5,6 +5,7 @@ const {
     getAllArticles,
     getlimitArticle,
     getEditorPicked,
+    getPopularArticles,
     createArticle } = require('../controllers/article.controller');
 
 router
@@ -23,6 +24,10 @@ router
 router
 .route('/picked/:num')
 .get(getEditorPicked);
+
+router
+.route('/popular/:num')
+.get(getPopularArticles);
 
 
 module.exports = router;

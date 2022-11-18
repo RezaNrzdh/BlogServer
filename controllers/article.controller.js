@@ -50,11 +50,24 @@ exports.getlimitArticle = async (req, res) => {
 exports.getEditorPicked = async (req, res) => {
     const limit = req.params.num;
 
-    await model.find({ editorpicked: true }).limit(limit).sort({})
+    await model.find({ editorpicked: true }).limit(limit)
         .then( doc => {
             res.status(200).json(doc);
         })
         .catch( err => {
             console.log(err);
         })
+}
+
+// Get popular articles
+exports.getPopularArticles = async (req, res) => {
+    const limit = req.params.num;
+
+    await model.find().limit(limit).sort({"visit": -1})
+        .then( doc => {
+            res.status(200).json(doc);
+        })
+        .catch( err => {
+            console.log(err);
+        });
 }
