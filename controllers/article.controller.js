@@ -71,3 +71,12 @@ exports.getPopularArticles = async (req, res) => {
             console.log(err);
         });
 }
+
+// Get Articles from X to Y
+exports.getOtherArticles = async (req, res) => {
+    const a = req.query;
+    console.log(a);
+    res.status(200).json({
+        r: a
+    });
+}
