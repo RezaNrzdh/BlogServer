@@ -17,6 +17,6 @@ app.use(express.json());
 app.use(cors());
 
 //routes
-app.use('/api/article', articleRoutes);
+app.use('/api/v1/articles/', articleRoutes);
 
 module.exports = app;
