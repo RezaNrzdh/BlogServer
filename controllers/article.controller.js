@@ -15,8 +15,15 @@ exports.getAllArticles = async (req, res) => {
 }
 
 // Get one article.
-exports.getArticle = (req, res) => {
-    res.status(200).send('getArticle');
+exports.getArticle = async (req, res) => {
+    const slug = req.query.slug;
+    await model.findOne({ slug: { $regex: slug }})
+        .then(doc => {
+            res.status(200).json(doc);
+        })
+        .catch( err => {
+            console.log(err);
+        })
 }
 
 // Create new article.
@@ -72,11 +79,15 @@ exports.getPopularArticles = async (req, res) => {
         });
 }
 
-// Get Articles from X to Y
-exports.getOtherArticles = async (req, res) => {
-    const a = req.query;
-    console.log(a);
-    res.status(200).json({
-        r: a
-    });
+// Get latest articles
+exports.getLatestArticles = async (req, res) => {
+    const limit = req.params.num;
+
+    await model.find().skip(5).limit(8).sort({'created': -1})
+        .then(doc => {
+            res.status(200).json(doc);
+        })
+        .catch(err => {
+            console.log(err);
+        });
 }

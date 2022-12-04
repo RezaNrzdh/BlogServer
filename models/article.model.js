@@ -5,6 +5,10 @@ const ArticleSchema = new mongoose.Schema({
         type: String,
         required: true,   
     },
+    slug: {
+        type: String,
+        require: true,
+    },
     img: {
         type: Array,
         required: true
