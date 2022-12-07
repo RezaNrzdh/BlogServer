@@ -42,12 +42,11 @@ const ArticleSchema = new mongoose.Schema({
     created: {
         type: Number,
         required: true,
-        default: new Date(Date.now())
+        default: Date.now
     }
 },{ 
     collection: 'articles'
 });
 
 const Articles = mongoose.model('Articles', ArticleSchema);
-
 module.exports = Articles;
