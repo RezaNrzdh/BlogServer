@@ -6,7 +6,7 @@ const contactRoutes = require('./routes/contact.routes');
 
 //cors config
 const CORS_OPTIONS = {
-    origin: 'http://localhost:4000',
+    origin: 'http://localhost:4200',
     optionSuccessStatus: 200
 }
 
