@@ -11,7 +11,7 @@ const ArticleSchema = new mongoose.Schema({
     },
     slug: {
         type: String,
-        require: true,
+        required: true,
     },
     img: {
         type: Array,
