@@ -3,6 +3,7 @@ const cors = require('cors');
 
 const articleRoutes = require('./routes/article.routes');
 const contactRoutes = require('./routes/contact.routes');
+const aboutRoutes   = require('./routes/about.routes');
 
 //cors config
 const CORS_OPTIONS = {
@@ -19,6 +20,7 @@ app.use(cors());
 
 //routes
 app.use('/api/v1/articles/', articleRoutes);
-app.use('/api/v1/contact/', contactRoutes)
+app.use('/api/v1/contact/', contactRoutes);
+app.use('/api/v1/about/', aboutRoutes)
 
 module.exports = app;
