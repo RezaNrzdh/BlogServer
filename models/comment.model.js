@@ -1,16 +1,40 @@
 const mongoose = require("mongoose");
 
 const CommentSchema = new mongoose.Schema({
-    name: { type: String, required: true },
+    _id: {
+        type: Number,
+        required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
     email: String,
-    comment: { type: String, required: true },
-    created: { type: Number, required: true, default: Date.now },
+    comment: {
+        type: String,
+        required: true
+    },
+    created: {
+        type: Number,
+        required: true,
+        default: Date.now
+    },
     replies: [
         {
-            name: { type: String, required: true },
+            name: {
+                type: String,
+                required: true
+            },
             email: String,
-            comment: { type: String, required: true },
-            created: { type: Number, required: true, default: Date.now }
+            comment: {
+                type: String,
+                required: true
+            },
+            created: {
+                type: Number,
+                required: true,
+                default: Date.now
+            }
         }
     ]
 }, { collection: "comment" });
