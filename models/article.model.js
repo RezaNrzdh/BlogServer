@@ -43,7 +43,43 @@ const ArticleSchema = new mongoose.Schema({
         type: Number,
         required: true,
         default: Date.now
-    }
+    },
+    comments: [
+        {
+            name: {
+                type: String,
+                required: true
+            },
+            email: String,
+            comment: {
+                type: String,
+                required: true
+            },
+            created: {
+                type: Number,
+                required: true,
+                default: Date.now
+            },
+            replies: [
+                {
+                    name: {
+                        type: String,
+                        required: true
+                    },
+                    email: String,
+                    comment: {
+                        type: String,
+                        required: true
+                    },
+                    created: {
+                        type: Number,
+                        required: true,
+                        default: Date.now
+                    }
+                }
+            ]
+        }
+    ]
 },{ 
     collection: 'articles'
 });
