@@ -16,7 +16,7 @@ exports.createMessage = async (req, res) => {
     await model.create(req.body)
         .then( doc => {
             res.status(201).json({
-                status: 200,
+                status: 201,
                 doc: doc
             });
         })
