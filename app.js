@@ -1,4 +1,5 @@
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 const articleRoutes   = require("./routes/article.routes");
@@ -19,6 +20,7 @@ const app = express();
 
 //app config
 app.use(express.json());
+app.use(cookieParser());
 app.use(cors(CORS_OPTIONS));
 
 //routes
