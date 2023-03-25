@@ -1,5 +1,4 @@
 const jwt    = require("jsonwebtoken");
-const model  = require("../../models/user.model");
 
 exports.verify = async(req, res) => {
     if(!req.cookies.jwt){
@@ -15,6 +14,4 @@ exports.verify = async(req, res) => {
             res.status(200).json(false);
         }
     }
-
-
 }

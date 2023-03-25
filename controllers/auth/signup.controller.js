@@ -27,7 +27,11 @@ exports.signup = async(req, res) => {
 
             res.status(201).json({
                 status: 201,
-                msg: "Your account created"
+                doc: {
+                    uid: doc._id,
+                    name: doc.email,
+                    role: doc.role
+                }
             });
         })
         .catch( err => {
