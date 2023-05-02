@@ -11,7 +11,7 @@ const authRoutes      = require("./routes/auth.routes");
 
 //cors config
 const CORS_OPTIONS = {
-    origin: "http://localhost:4200",
+    origin: "http://localhost:8080",
     credentials: true
 }
 
